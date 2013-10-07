@@ -2,7 +2,7 @@
 layout: post
 title:  "Software Survivalism"
 date:   2013-10-06 13:45:55
-categories: jekyll blog
+categories: blog software survivalism
 ---
 
 I consider myself something of a software survivalist, and therefore am interested in the neo-retro world as a means of securing a safe haven for my hacking interests.
