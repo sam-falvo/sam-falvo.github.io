@@ -21,8 +21,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   body {
-    border-width: 1em;
-    width: 100%;
+    margin: 1em;
   }
 }
 
@@ -66,12 +65,23 @@ ul.posts span {
 /*
 /*****************************************************************************/
 
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+@media only screen and (max-width: 480px) {
+	.site {
+	  font-size: 115%;
+	  text-align: justify;
+	  margin: 3em auto 2em;
+	  line-height: 1.5em;
+	}
+}
+
+@media only screen and (min-width: 481px) {
+	.site {
+	  font-size: 115%;
+	  text-align: justify;
+	  width: 42em;
+	  margin: 3em auto 2em;
+	  line-height: 1.5em;
+	}
 }
 
 .site .header a {
