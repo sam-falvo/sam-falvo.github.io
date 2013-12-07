@@ -143,11 +143,11 @@ Idiomatically, the F18A environment stores return addresses on the hardware retu
 Implementing an indirect subroutine to any arbitrary address involves pushing a fake return address on the stack, then returning to that address.
 
 ```
-li	subroutine_pointer
+li      subroutine_pointer
 lda
 fwa
 push
-rfs				; or 'ex' if you're calling from inside a larger subroutine.
+rfs                             ; or 'ex' if you're calling from inside a larger subroutine.
 ```
 
 This takes seven cycles to complete; since the processor maintains the linkage information on the return stack, no additional time need be spent.
@@ -169,265 +169,265 @@ With careful attention to program structure, performance can be weighted closer 
 ### Listing 1.
 
 ```
-outsfc:		ds	1
+outsfc:         ds      1
 
-os_bitmap	equ	0
-os_fontBase	equ	1
-os_flip		equ	2
-os_scroll	equ	3
-os_x		equ	4
-os_y		equ	5
-os_ch		equ	6
+os_bitmap       equ     0
+os_fontBase     equ     1
+os_flip         equ     2
+os_scroll       equ     3
+os_x            equ     4
+os_y            equ     5
+os_ch           equ     6
 
-p:		ds	1
-q:		ds	1
+p:              ds      1
+q:              ds      1
 
-plt:		li	p
-		sta
-		fma
+plt:            li      p
+                sta
+                fma
 
-		sta
-		fma
-		li	q
+                sta
+                fma
+                li      q
 
-		sta
-		fma
-		sta
+                sta
+                fma
+                sta
 
-		sma
-		li	p
-		sta
+                sma
+                li      p
+                sta
 
-		fma
-		li	256
-		nop
-		add
+                fma
+                li      256
+                nop
+                add
 
-		sma
-		li	q
-		sma
+                sma
+                li      q
+                sma
 
-		fma
-		li	80
-		nop
-		add
+                fma
+                li      80
+                nop
+                add
 
-		sma
-		rfs
+                sma
+                rfs
 
-pltc:		li	8
-		push
+pltc:           li      8
+                push
 
-L01:		call	plt
+L01:            call    plt
 
-		next	L01
+                next    L01
 
-		rfs
+                rfs
 
-zerop:		li	outsfc
-		lda
-		fma
+zerop:          li      outsfc
+                lda
+                fma
 
-		li	os_fontBase
-		nop
-		add
+                li      os_fontBase
+                nop
+                add
 
-		lda
-		fma
-		li	outsfc
+                lda
+                fma
+                li      outsfc
 
-		lda
-		fma
-		li	os_ch
-		nop
+                lda
+                fma
+                li      os_ch
+                nop
 
-		add
-		lda
-		fma
-		nop
+                add
+                lda
+                fma
+                nop
 
-		add
-		li	p
-		lda
+                add
+                li      p
+                lda
 
-		sma
-		rfs
+                sma
+                rfs
 
-zeroq:		li	outsfc
-		lda
-		fma
+zeroq:          li      outsfc
+                lda
+                fma
 
-		li	os_y
-		nop
-		add
+                li      os_y
+                nop
+                add
 
-		lda
-		fma
-		li	640
+                lda
+                fma
+                li      640
 
-		lda
-		li	18
-		push
+                lda
+                li      18
+                push
 
-		li	0
-
-L02:		nop
-		muls
-		unext
-
-		drop
-		drop
-		sta
-
-		li	outsfc
-		lda
-		fma
-
-		li	os_bitmap
-		nop
-		add
-
-		lda
-		fma
-		add
-
-		li	outsfc
-		lda
-		fma
-
-		li	os_x
-		nop
-		add
-
-		lda
-		fma
-		nop
-		add
-
-		li	q
-		lda
-		sma
-		rfs
-
-addrs:		call	zerop
-
-		jmp	zeroq
-
-flip:		li	outsfc
-		lda
-		fma
-
-		li	os_flip
-		nop
-		add
-
-		lda
-		fma
-		push
-		rfs
+                li      0
+
+L02:            nop
+                muls
+                unext
+
+                drop
+                drop
+                sta
+
+                li      outsfc
+                lda
+                fma
+
+                li      os_bitmap
+                nop
+                add
+
+                lda
+                fma
+                add
+
+                li      outsfc
+                lda
+                fma
+
+                li      os_x
+                nop
+                add
+
+                lda
+                fma
+                nop
+                add
+
+                li      q
+                lda
+                sma
+                rfs
+
+addrs:          call    zerop
+
+                jmp     zeroq
+
+flip:           li      outsfc
+                lda
+                fma
+
+                li      os_flip
+                nop
+                add
+
+                lda
+                fma
+                push
+                rfs
 
-crsr:		li	outsfc
-		lda
-		fma
+crsr:           li      outsfc
+                lda
+                fma
 
-		li	os_x
-		nop
-		add
+                li      os_x
+                nop
+                add
 
-		lda
-		fma
-		li	-79
+                lda
+                fma
+                li      -79
 
-		nop
-		add
-		jpl	L03
+                nop
+                add
+                jpl     L03
 
-		drop
-		li	outsfc
-		lda
+                drop
+                li      outsfc
+                lda
 
-		fma
-		li	os_x
-		nop
-		add
+                fma
+                li      os_x
+                nop
+                add
 
-		lda
-		fma
-		li	1
-		nop
+                lda
+                fma
+                li      1
+                nop
 
-		add
-		sma
-		rfs
+                add
+                sma
+                rfs
 
-L03:		drop
-		li	0
-		li	outsfc
+L03:            drop
+                li      0
+                li      outsfc
 
-		lda
-		fma
-		li	os_x
-		nop
+                lda
+                fma
+                li      os_x
+                nop
 
-		add
-		lda
-		sma
+                add
+                lda
+                sma
 
-		li	outsfc
-		lda
-		fma
+                li      outsfc
+                lda
+                fma
 
-		li	os_y
-		nop
-		add
+                li      os_y
+                nop
+                add
 
-		lda
-		fma
-		li	-24
-		nop
+                lda
+                fma
+                li      -24
+                nop
 
-		add
-		jpl	L04
-		drop
+                add
+                jpl     L04
+                drop
 
-		li	outsfc
-		lda
-		fma
+                li      outsfc
+                lda
+                fma
 
-		li	os_y
-		nop
-		add
+                li      os_y
+                nop
+                add
 
-		lda
-		fma
-		li	1
+                lda
+                fma
+                li      1
 
-		nop
-		add
-		sma
-		rfs
+                nop
+                add
+                sma
+                rfs
 
-L04:		drop
-		li	outsfc
-		lda
+L04:            drop
+                li      outsfc
+                lda
 
-		fma
-		li	os_scroll
-		nop
-		add
+                fma
+                li      os_scroll
+                nop
+                add
 
-		lda
-		fma
-		push
-		rfs
+                lda
+                fma
+                push
+                rfs
 
-plotch:		call	addrs
+plotch:         call    addrs
 
-		call	pltc
+                call    pltc
 
-		call	crsr
+                call    crsr
 
-		jmp	flip
+                jmp     flip
 ```
 
 ### Listing 2.
@@ -435,194 +435,194 @@ plotch:		call	addrs
 This program should behave as listing 1, but has been refactored for maximum code density.
 
 ```
-outsfc:		ds	1
+outsfc:         ds      1
 
-os_bitmap	equ	0
-os_fontBase	equ	1
-os_flip		equ	2
-os_scroll	equ	3
-os_x		equ	4
-os_y		equ	5
-os_ch		equ	6
+os_bitmap       equ     0
+os_fontBase     equ     1
+os_flip         equ     2
+os_scroll       equ     3
+os_x            equ     4
+os_y            equ     5
+os_ch           equ     6
 
-p:		ds	1
-q:		ds	1
+p:              ds      1
+q:              ds      1
 
-plt:		li	p
-		sta
-		fma
+plt:            li      p
+                sta
+                fma
 
-		sta
-		fma
-		li	q
+                sta
+                fma
+                li      q
 
-		sta
-		fma
-		sta
+                sta
+                fma
+                sta
 
-		sma
-		li	p
-		sta
+                sma
+                li      p
+                sta
 
-		fma
-		li	256
-		nop
-		add
+                fma
+                li      256
+                nop
+                add
 
-		sma
-		li	q
-		sma
+                sma
+                li      q
+                sma
 
-		fma
-		li	80
-		nop
-		add
+                fma
+                li      80
+                nop
+                add
 
-		sma
-		rfs
+                sma
+                rfs
 
-pltc:		li	8
-		push
+pltc:           li      8
+                push
 
-L01:		call	plt
+L01:            call    plt
 
-		next	L01
+                next    L01
 
-		rfs
+                rfs
 
-_outsfc__:	li	outsfc
-		lda
-		fma
-		nop
+_outsfc__:      li      outsfc
+                lda
+                fma
+                nop
 
-		add
-		lda
-		rfs
+                add
+                lda
+                rfs
 
-_outsfc_os_x:	li	os_x
-		jmp	_outsfc__
+_outsfc_os_x:   li      os_x
+                jmp     _outsfc__
 
-_outsfc_os_y:	li	os_y
-		jmp	_outsfc__
+_outsfc_os_y:   li      os_y
+                jmp     _outsfc__
 
-zerop:		li	os_fontBase
-		call	_outsfc__
+zerop:          li      os_fontBase
+                call    _outsfc__
 
-		fma
-		li	os_ch
-		call	_outsfc__
+                fma
+                li      os_ch
+                call    _outsfc__
 
-		fma
-		nop
-		add
+                fma
+                nop
+                add
 
-		li	p
-		lda
-		sma
-		rfs
+                li      p
+                lda
+                sma
+                rfs
 
-zeroq:		call	_outsfc_os_y
+zeroq:          call    _outsfc_os_y
 
-		fma
-		li	640
-		lda
+                fma
+                li      640
+                lda
 
-		li	18
-		push
-		li	0
+                li      18
+                push
+                li      0
 
-L02:		nop
-		muls
-		unext
+L02:            nop
+                muls
+                unext
 
-		drop
-		drop
-		sta
+                drop
+                drop
+                sta
 
-		li	os_bitmap
-		call	_outsfc__
+                li      os_bitmap
+                call    _outsfc__
 
-		fma
-		nop
-		add
+                fma
+                nop
+                add
 
-		call	_outsfc_os_x
+                call    _outsfc_os_x
 
-		fma
-		nop
-		add
+                fma
+                nop
+                add
 
-		li	q
-		lda
-		sma
-		rfs
+                li      q
+                lda
+                sma
+                rfs
 
-addrs:		call	zerop
+addrs:          call    zerop
 
-		jmp	zeroq
+                jmp     zeroq
 
-flip:		li	os_flip
-		call	_outsfc__
+flip:           li      os_flip
+                call    _outsfc__
 
-		fma
-		push
-		rfs
+                fma
+                push
+                rfs
 
-crsr:		call	_outsfc_os_x
+crsr:           call    _outsfc_os_x
 
-		fma
-		li	-79
-		nop
-		add
+                fma
+                li      -79
+                nop
+                add
 
-		jpl	L03
-		drop
-		fma
+                jpl     L03
+                drop
+                fma
 
-		li	1
-		nop
-		add
+                li      1
+                nop
+                add
 
-		sma
-		rfs
+                sma
+                rfs
 
-L03:		drop
-		li	0
-		sma
+L03:            drop
+                li      0
+                sma
 
-		call	_outsfc_os_y
+                call    _outsfc_os_y
 
-		fma
-		li	-24
-		nop
-		add
+                fma
+                li      -24
+                nop
+                add
 
-		jpl	L04
+                jpl     L04
 
-		drop
-		fma
-		li	1
+                drop
+                fma
+                li      1
 
-		nop
-		add
-		sma
-		rfs
+                nop
+                add
+                sma
+                rfs
 
-L04:		drop
-		li	os_scroll
+L04:            drop
+                li      os_scroll
 
-		call	_outsfc__
+                call    _outsfc__
 
-		fma
-		push
-		rfs
+                fma
+                push
+                rfs
 
-plotch:		call	addrs
+plotch:         call    addrs
 
-		call	pltc
+                call    pltc
 
-		call	crsr
+                call    crsr
 
-		jmp	flip
+                jmp     flip
 ```
 
