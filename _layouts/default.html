@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+        <!-- Bootstrap -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{site.baseurl}}/dist/css/bootstrap.min.css" />
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css" />
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="{{site.baseurl}}/css/site.css" />
 
+        <!-- Site-specific Settings -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{{ page.title }}</title>
     </head>
-    <body>
-
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Samuel A. Falvo II<br />
-                Software Engineer
-              </p>
+    <body class="text-justify">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-md-12 banner">
+                    <h1 class="project-title"><a href="{{site.baseurl}}/">{{site.name}}</a></h1>
+                    <a class="project-title" href="{{site.baseurl}}/">home</a>
+                </div>
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/sam-falvo">github.com/sam-falvo</a><br />
-                <a href="https://twitter.com/samuelafalvoii">twitter.com/samuelafalvoii</a><br />
-              </p>
+            {{ content }}
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright small">
+                        Samuel A. Falvo II<br />
+                        Software Engineer
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <footer class="inner small">
+                        <p class="copyright">
+                            <a class="pull-right" href="{{site.baseurl}}/atom.xml">ATOM feed</a><br />
+                            <a class="pull-right" href="{{site.baseurl}}">{{site.baseurl}}</a><br />
+                            <a class="pull-right" href="https://twitter.com/samuelafalvoii">twitter.com/samuelafalvoii</a><br />
+                        </p>
+                    </footer>
+                </div>
             </div>
-          </div>
         </div>
-
     </body>
 </html>
