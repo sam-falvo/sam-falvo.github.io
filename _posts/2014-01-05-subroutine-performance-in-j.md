@@ -144,8 +144,8 @@ Due in part to the substantially faster word execution performance over J,
 and in part due to the substantially reduced timer precision provided by Unix command-line tools,
 I needed to increase the number of rows that `pfn` needs to process to 1.3e9.
 This caused GForth to run for just about a full minute on the PC, allowing `time gforth pfn.fs` to report meaningful results.
-You'll notice I allocate only 1.3e8 bytes of memory in the code, but iterate over the data set ten times.
-I tried allocating 1.3e9 bytes directly, but at least with GForth 0.7.0 64-bit running under Linux,
+You'll notice I allocate only 1.3e8 cells of memory in the code, but iterate over the data set ten times.
+I tried allocating 1.3e9 cells (5.2GB) directly, but at least with GForth 0.7.0 64-bit running under Linux,
 I cannot allocate that much memory.
 
 ### Data
