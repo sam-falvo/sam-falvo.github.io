@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/saf2
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sam-falvo.github.io
+  * I am saf2 (https://keybase.io/saf2) on keybase.
+  * I have a public key with fingerprint 07B8 1461 A0DE C658 D4F3  ED4C 62C5 0196 16AF 1914
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "07b81461a0dec658d4f3ed4c62c5019616af1914",
+            "host": "keybase.io",
+            "key_id": "62c5019616af1914",
+            "kid": "01013ce394ebb4b65ad8d9a4b9dacf3893aab03b551c29e74f355d91d49630e153550a",
+            "uid": "977d4a8a105188f67082c06a07604019",
+            "username": "saf2"
+        },
+        "service": {
+            "hostname": "sam-falvo.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1432066043,
+    "expire_in": 157680000,
+    "prev": "4abc0a0d4ba6c37add9881e18f25cb5aef5cf315fe29ff2564b4b9eb7d970f73",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIeAnicbVJbSBRRGF7T9TKmFFgU9OKID9GunTP3WRUik8KoRFySNLYzM2d0UGfW
+3dn1hmBRWAqSXZDwobSMerC0hxWyNG/00IXqwSfBispLhSRRRBmdsctT5+Xwf//3
+f////fxTafEuKq43d6hTmkvOjns0vifi8pd3f2+mFUtrpH3NdDVe+3TDrMShYMgw
+bdpHA1GRICdABDSsCrykcTqLNU4VGJUHUBaggHQoQ4720FVW2KkgMgoK4xzDIhgJ
+AoZG0P/wq9cSAALIqpiVOawonCLwSJM0GXGKrCFVZyWZRUgBrMLzUGVkLJL+PK/J
+UONkgQUY8iQEiMhF1uRkUdQ4JCEIeChJuiACiVGBgIAoAI4M4BDDOGSiWkzYYaQz
+dIuHJkjUULFj33HxL1vr1VFN1MqpNOyqiPLbUjBk2ZZq1RBClW0Hwz5HwG4MOhX1
+WAn80QoohqmRVZKKKA6FDcukfZAwVdtwxCHHMkAgM7EeGjcEjRAOGA6DFwUJkOf0
+wVEiySFFBWT7nIIElRWRpsmSBDGUdIZXFR5hnSdrgryOGVknmMCRLcpYETVZBLrI
+0o67OtOifaSTjSodX0aliexICNMtEw8qElxxlCvRvc45BheVsuHviSS+SVrNOLtr
+2HvJnU11P8TJ5mL7JndGK03FZmr2JQZurcxH07MifQtq0anisljZ47pj6Z6BvM9F
+A/3UdP1Fd9bem25/V/y2G7MrMwX0YK732lznJ2sCepd6Sp+VnBxuXl5s3x8bmSrf
+2XoOdi2WXf+2wvHPqUw+oy07//CZFm08+3ZaBYtqU7+kXj66+X5/9OP2zP6OLfd+
+sv19+W/Lm+7OvWhYGfkx6qtOuk4dnM/3F/fuGLyTWluCmaS42SfF2MONfZiNeV6O
+Ll/oOHHA/e7q09cpTSOrbQO7T49PTuf1LLxKSHq/dN5fWDq2sWf91zB75fhQweTq
+kamalEOeiuXWwq2/AE0lJD8=
+=jcvO
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/saf2
+
+==================================================================
+
