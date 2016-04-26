@@ -1,5 +1,5 @@
 name: Software Survivalist
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 permalink: /:year/:month/:day/:title
 baseurl:
