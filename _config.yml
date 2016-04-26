@@ -1,6 +1,6 @@
 name: Software Survivalist
 markdown: kramdown
-pygments: true
+highlighter: rouge
 permalink: /:year/:month/:day/:title
 baseurl:
 
