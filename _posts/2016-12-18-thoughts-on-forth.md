@@ -67,6 +67,7 @@ Yes and no.
 It's quite clear that without some flavor of standardization,
 you cannot take a program for one Forth and run it as-is on another.
 Some standards do exist:
+
 1. Forth depends on a two-stack environment: a data stack for evaluation, and a return stack to hold continuations.
 2. Forth depends on a dictionary that can grow or shrink, logically similar to a stack, if not in fact.
 3. You define new words with **:** (colon), and terminate their definitions with **;** (semicolon).
@@ -74,6 +75,7 @@ Some standards do exist:
 5. You can manually switch from compile-mode to interpret-mode and back again (e.g., with **[** and **]**).
 6. Some method of off-line storage is provided, such that it allows you to (at run-time) swap in new code at will.
 7. Some method exists of recycling space in the dictionary.
+
 Note the specific absence of *detailed methods* of accomplishing or implementing these attributes.
 A typical C programmer will look at this and say, "That's nice, but without more detail, you can't easily port a program."
 That's because this programmer is not used to how a Forth environment works.
