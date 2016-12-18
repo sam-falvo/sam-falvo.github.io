@@ -4,8 +4,6 @@ title: "Some Thoughts on Forth vis-a-vis Oracle and Java SE"
 author: "Samuel A. Falvo II"
 ---
 
-# Some Thoughts on Forth vis-a-vis Oracle and Java SE
-
 This whole Java SE bullshido that Oracle is all up on their high horse about
 has made me think about why I really enjoy Forth.
 I'd like to lay down some of my thoughts before I forget them,
