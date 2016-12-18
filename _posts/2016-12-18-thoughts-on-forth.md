@@ -56,8 +56,11 @@ Yet, as a general rule,
 abstractions are treated as adaptation layers that sits between your desired application and the surrounding environment.
 Often, these layers are bundled with the *application*, and not provided as a standard feature of the language.
 
-Put more plainly, *the Forth environment itself was untrusted by an application developer.*
-This differs starkly from the usual view of the runtime environment not trusting the application.
+Put more plainly,
+*the Forth environment trusts the application to do the right thing, but the application never trusts the Forth environment.*
+This differs starkly from the usual view where
+the application trusts the runtime or operating system,
+but the runtime environment or operating system does not trust the application.
 
 When you have total freedom over the programming landscape like this, won't chaos ensue?
 Yes and no.
