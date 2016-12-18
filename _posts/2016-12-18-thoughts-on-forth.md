@@ -84,7 +84,8 @@ As someone with first-hand experience porting non-ANSI Forth programs to ANSI Fo
 porting software is simply not as big of a problem as it is for, say, a system built around a typical C toolchain.
 Forth translates directly from source code to binary with no intervening link editing steps,
 and thus concerns of *binary compatibility* generally doesn't arise.
-Combined with the fact that most Forth systems make use of a "hyper-static global environment,"
+Combined with the fact that most Forth systems make use of a
+[hyper-static global environment,](http://wiki.c2.com/?HyperStaticGlobalEnvironment)
 it's often more than sufficient to just introduce a *compatibility layer* ahead of the program you actually want to run.
 In other words, it's often easy to "virtualize" a figForth environment on an ANSI Forth system,
 and it's often as easy to "virtualize" a sufficient subset of an ANS Forth environment on eForth 1.0.
