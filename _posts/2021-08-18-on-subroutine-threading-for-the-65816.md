@@ -342,5 +342,5 @@ as more sophsticated software is hierarchically composed of these lower-level pr
 
 [2] Eyes, David and Ron Lichty.  _Programming the 65816_.  1986.  ISBN 0-89303-789-3.
 
-[3] Rodriguez, Brad.  _Moving Forth_.  Accessed 2021 Aug 17.  http://www.bradrodriguez.com/papers/moving1.htm
+[3] Rodriguez, Brad.  _Moving Forth_.  Accessed 2021 Aug 17.  [http://www.bradrodriguez.com/papers/moving1.htm](http://www.bradrodriguez.com/papers/moving1.htm)
 
