@@ -70,7 +70,7 @@ and X to the roll of the data stack pointer.
 This allows the data stack to be overlaid with the direct page segment,
 allowing the *dp,X* addressing mode to be used for addressing the stack.
 However, the X register must be maintained manually in software,
-incrementing and decrementing frequently as the data stack is more frequently used than the return stack.[3]
+incrementing and decrementing frequently as the data stack is more frequently used than the return stack.[2]
 
 Consider how a VM implementer might program a simple binary addition primitive:
 
@@ -87,7 +87,7 @@ Consider how a VM implementer might program a simple binary addition primitive:
         inx            ; 2 cycles
         rts            ; 6 cycles
 
-According the the instruction set listings in [2],
+According the the instruction set listings in [1],
 the above fragment of code should take 33 cycles to complete a 16-bit addition, including the JSR needed to invoke it.
 Since the addition itself takes 7 cycles (CLC; ADC combination), the rest is overhead.
 Can this overhead be reduced if we swap the conventional roles of the X and S registers?
@@ -323,10 +323,10 @@ This amortizes the cost of stack management over the cost of the procedure's mor
 
 Subroutine threading isn't the only approach to executing a stack-based virtual machine.
 Indirect, direct, and token threaded code representations also exist,
-and have been successfully used to implement a variety of different languages for constrained systems. [3]
+and have been successfully used to implement a variety of different languages for constrained systems. [2]
 However, for the 65816 processor, none of these alternative approaches can come close to subroutine threading for performance.
 What they lack in performance, however, they make up for in code compactness, which explains their popularity on smaller systems.
-You can learn more about these alternative techniques in [3].
+You can learn more about these alternative techniques in [2].
 
 # Conclusion
 
@@ -340,7 +340,7 @@ as more sophsticated software is hierarchically composed of these lower-level pr
 
 # References
 
-[2] Eyes, David and Ron Lichty.  _Programming the 65816_.  1986.  ISBN 0-89303-789-3.
+[1] Eyes, David and Ron Lichty.  _Programming the 65816_.  1986.  ISBN 0-89303-789-3.
 
-[3] Rodriguez, Brad.  _Moving Forth_.  Accessed 2021 Aug 17.  [http://www.bradrodriguez.com/papers/moving1.htm](http://www.bradrodriguez.com/papers/moving1.htm)
+[2] Rodriguez, Brad.  _Moving Forth_.  Accessed 2021 Aug 17.  [http://www.bradrodriguez.com/papers/moving1.htm](http://www.bradrodriguez.com/papers/moving1.htm)
 
